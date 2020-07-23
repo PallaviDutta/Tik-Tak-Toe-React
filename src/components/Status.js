@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Player from "./choosePlayer";
+import Counter1 from "./Counter1";
+import Counter2 from "./Counter2";
 
 class Status extends Component {
   handleSetPlayer(e) {
@@ -28,10 +30,17 @@ class Status extends Component {
       return <h2>Winner is {this.printWinnerName(this.props.player)}</h2>;
     } else {
       return this.props.player.player ? (
-        <h2>
-          Next player is {this.printName(this.props.player)}(
-          {this.props.player.player})
-        </h2>
+        <div>
+          <h2>
+            Chance of player {this.printName(this.props.player)}(
+            {this.props.player.player})
+          </h2>
+          {this.props.player === this.props.player.player ? (
+            <Counter1 counter={this.props.count} />
+          ) : (
+            <Counter2 counter={this.props.count} />
+          )}
+        </div>
       ) : (
         <Player player={(e) => this.handleSetPlayer(e)} />
       );

@@ -24,7 +24,7 @@ class Counter2 extends React.Component {
   render() {
     return (
       <div>
-        <h1>time Left: {this.state.count}</h1>
+        <h1>Time Left: {this.state.count}</h1>
       </div>
     );
   }

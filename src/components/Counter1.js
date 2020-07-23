@@ -1,6 +1,6 @@
 import React from "react";
 
-class Counter extends React.Component {
+class Counter1 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,10 +24,10 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        <h1>time Left: {this.state.count}</h1>
+        <h1>Time Left: {this.state.count}</h1>
       </div>
     );
   }
 }
 
-export default Counter;
+export default Counter1;
