@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Status from "./components/Status";
 import Players from "./components/printPlayers";
+import Button from "@material-ui/core/Button";
 
 class App extends Component {
   constructor(props) {
@@ -84,7 +85,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Tic Tac Toe App</h1>
+        <h1 className="spacing">Tic Tac Toe</h1>
         <Status
           player={this.state}
           setPlayer={(e) => {
@@ -94,10 +95,16 @@ class App extends Component {
         />
         <Players player1={this.state.player1} player2={this.state.player2} />
         <div className="board">{this.renderBoxes()}</div>
-        <button disabled={!this.state.winner} onClick={() => this.reset()}>
-          {" "}
-          Reset
-        </button>
+        <div className="spacing">
+          <Button
+            variant="contained"
+            size="large"
+            disabled={!this.state.winner}
+            onClick={() => this.reset()}
+          >
+            Reset
+          </Button>
+        </div>
       </div>
     );
   }
