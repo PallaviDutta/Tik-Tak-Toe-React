@@ -36,7 +36,7 @@ function Player(props) {
   const [player1, setPlayer1] = useState("Player1");
   const [player2, setPlayer2] = useState("Player2");
   const [playerValue1, setPlayerValue1] = useState("X");
-  const [playerValue2, setPlayerValue2] = useState("0");
+  const [playerValue2, setPlayerValue2] = useState("O");
 
   async function setStartingPlayer(e) {
     props.player({
