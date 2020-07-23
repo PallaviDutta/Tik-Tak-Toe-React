@@ -35,7 +35,7 @@ class Status extends Component {
             Chance of player {this.printName(this.props.player)}(
             {this.props.player.player})
           </h2>
-          {this.props.player === this.props.player.player ? (
+          {this.props.player.player === "X" ? (
             <Counter1 counter={this.props.count} />
           ) : (
             <Counter2 counter={this.props.count} />

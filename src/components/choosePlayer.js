@@ -64,7 +64,7 @@ function Player(props) {
           />
           <FormControl component="fieldset">
             <FormLabel className={classes.root} component="legend">
-              Choose X or 0
+              Choose X or O
             </FormLabel>
             <RadioGroup
               row
@@ -78,19 +78,19 @@ function Player(props) {
                 control={<Radio color="primary" />}
                 label="X"
                 onClick={(e) => {
-                  let b = "0";
-                  b = e.target.value == "X" ? "0" : "X";
+                  let b = "O";
+                  b = e.target.value == "X" ? "O" : "X";
                   setPlayerValue1(e.target.value);
                   setPlayerValue2(b);
                 }}
               />
               <FormControlLabel
-                value="0"
+                value="O"
                 control={<Radio color="primary" />}
-                label="0"
+                label="O"
                 onClick={(e) => {
                   let b = "X";
-                  b = e.target.value == "0" ? "X" : "0";
+                  b = e.target.value == "O" ? "X" : "O";
                   setPlayerValue1(e.target.value);
                   setPlayerValue2(b);
                 }}
