@@ -51,7 +51,6 @@ function Player(props) {
 
   return (
     <div>
-      {/* Edit Player Name and Choose X or 0 */}
       <Grid container spacing={3}>
         <Grid item xs={1}></Grid>
         <Grid item xs={5}>
@@ -102,14 +101,14 @@ function Player(props) {
         <Grid item xs={5}>
           <TextField
             id="player2"
-            label="Enter Player2 (0)"
+            label="Enter Player2 (O)"
             defaultValue="Player2"
             variant="outlined"
             onChange={(e) => setPlayer2(e.target.value)}
           />
           <FormControl component="fieldset">
             <FormLabel className={classes.root} component="legend">
-              Choose X or 0
+              Choose X or O
             </FormLabel>
             <RadioGroup
               row
@@ -123,19 +122,19 @@ function Player(props) {
                 control={<Radio color="primary" />}
                 label="X"
                 onClick={(e) => {
-                  let b = "0";
-                  b = e.target.value == "X" ? "0" : "X";
+                  let b = "O";
+                  b = e.target.value == "X" ? "O" : "X";
                   setPlayerValue2(e.target.value);
                   setPlayerValue1(b);
                 }}
               />
               <FormControlLabel
-                value="0"
+                value="O"
                 control={<Radio color="primary" />}
-                label="0"
+                label="O"
                 onClick={(e) => {
                   let b = "X";
-                  b = e.target.value == "0" ? "X" : "0";
+                  b = e.target.value == "O" ? "X" : "O";
                   setPlayerValue2(e.target.value);
                   setPlayerValue1(b);
                 }}
@@ -161,7 +160,6 @@ function Player(props) {
         </Grid>
         <Grid item xs={5}></Grid>
       </Grid>
-      {/* Edit Player Name and Choose X or 0 */}
     </div>
   );
 }
