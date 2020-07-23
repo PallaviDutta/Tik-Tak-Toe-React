@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Status from "./components/Status";
-import Button from "@material-ui/core/Button";
+import Players from "./components/printPlayers";
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +9,10 @@ class App extends Component {
     this.state = {
       board: Array(9).fill(null),
       player: null,
+      player1: "Player1",
+      player1Value: null,
+      player2: "Player2",
+      player2Value: null,
       winner: null,
     };
   }
@@ -32,7 +36,7 @@ class App extends Component {
       const [a, b, c] = winLines[index];
       let board = this.state.board;
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-        alert("You won");
+        // alert('You won');
         this.setState({
           winner: this.state.player,
         });
@@ -54,7 +58,14 @@ class App extends Component {
     }
   }
   setPlayer(player) {
-    this.setState({ player });
+    console.log("player", player);
+    this.setState({
+      player: player.Player1value,
+      player1: player.Player1,
+      player2: player.Player2,
+      player1Value: player.Player1value,
+      player2Value: player.Player2value,
+    });
   }
   renderBoxes() {
     return this.state.board.map((box, index) => (
@@ -73,28 +84,20 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Tic-Tac-Toe</h1>
+        <h1>Tic Tac Toe App</h1>
         <Status
-          player={this.state.player}
+          player={this.state}
           setPlayer={(e) => {
             this.setPlayer(e);
           }}
           winner={this.state.winner}
         />
+        <Players player1={this.state.player1} player2={this.state.player2} />
         <div className="board">{this.renderBoxes()}</div>
-        <div>
-          <Button
-            disabled={!this.state.winner}
-            onClick={() => this.reset()}
-            style={{ marginTop: "5%" }}
-            variant="contained"
-            size="large"
-            color="secondary"
-          >
-            {" "}
-            Reset
-          </Button>
-        </div>
+        <button disabled={!this.state.winner} onClick={() => this.reset()}>
+          {" "}
+          Reset
+        </button>
       </div>
     );
   }

@@ -14,5 +14,5 @@
 .board {
   display: inline-flex;
   flex-wrap: wrap;
-  width: 270px;
+  width: 320px;
 }
