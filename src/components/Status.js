@@ -37,9 +37,9 @@ class Status extends Component {
           </h2>
 
           {this.props.player.player === "X" ? (
-            <Counter1 counter={this.props.count} />
+            <Counter1 counter={this.props.count} player={this.props.player} />
           ) : (
-            <Counter2 counter={this.props.count} />
+            <Counter2 counter={this.props.count} player={this.props.player} />
           )}
         </div>
       ) : (
